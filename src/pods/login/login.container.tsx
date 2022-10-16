@@ -9,7 +9,10 @@ export const LoginContainer = () => {
   const navigate = useNavigate();
 
   const handleLogin = (infoLogin: InfoLogin) => {
-    if (infoLogin.user === "admin" && infoLogin.password === "admin") {
+    if (
+      infoLogin.user === "admin@admin.com" &&
+      infoLogin.password === "123456"
+    ) {
       navigate(routes.list);
     } else {
       alert("Invalid user or password");
