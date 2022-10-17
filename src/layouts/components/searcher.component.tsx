@@ -1,12 +1,22 @@
 import React from "react";
 
 import { useLocation } from "react-router-dom";
+import { useDebounce } from "use-debounce";
 import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
-import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 
 import { MyContext } from "@/app";
+
+const SearchIconWrapper = styled("div")(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -27,7 +37,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em)`,
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
@@ -44,6 +54,7 @@ export const Searcher = () => {
   const [textFilter, setTextFilter] = React.useState(filter);
   const location = useLocation();
   const [disableSearch, setDisableSearch] = React.useState(false);
+  const [debouncedFilter] = useDebounce(textFilter, 1500);
 
   React.useEffect(() => {
     if (location.pathname !== "/list") {
@@ -55,12 +66,16 @@ export const Searcher = () => {
     setTextFilter(e.target.value);
   };
 
-  const handleClick = () => {
+  React.useEffect(() => {
     setFilter(textFilter);
-  };
+  }, [debouncedFilter]);
+
   return (
     <>
       <Search>
+        <SearchIconWrapper>
+          <SearchIcon />
+        </SearchIconWrapper>
         <StyledInputBase
           placeholder="Search…"
           value={textFilter}
@@ -68,13 +83,6 @@ export const Searcher = () => {
           inputProps={{ "aria-label": "search" }}
           disabled={disableSearch}
         />
-        <IconButton
-          component="label"
-          onClick={handleClick}
-          disabled={disableSearch}
-        >
-          <SearchIcon />
-        </IconButton>
       </Search>
     </>
   );
