@@ -54,7 +54,7 @@ export const Searcher = () => {
   const [textFilter, setTextFilter] = React.useState(filter);
   const location = useLocation();
   const [disableSearch, setDisableSearch] = React.useState(false);
-  const [debouncedFilter] = useDebounce(textFilter, 1500);
+  const [debouncedFilter] = useDebounce(textFilter, 1000);
 
   React.useEffect(() => {
     if (location.pathname !== "/list") {
