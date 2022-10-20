@@ -2,7 +2,7 @@ import React from "react";
 
 import { Formik, Form } from "formik";
 import Card from "@mui/material/Card";
-import { Button, CardHeader, CardContent } from "@mui/material";
+import { Button, CardHeader, CardContent, Alert } from "@mui/material";
 
 import { InfoLogin } from "./login.vm";
 import { InputFormik } from "@/common/components/input-formik.component";
@@ -18,6 +18,7 @@ export const Login = (props: Props) => {
 
   return (
     <>
+      <Alert severity="info">Credentials: admin@admin.com / 123456</Alert>
       <Card sx={{ padding: "20px" }}>
         <CardHeader title="Login" />
         <CardContent>
