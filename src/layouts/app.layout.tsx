@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -15,13 +15,22 @@ interface Props {
 
 export const AppLayout: React.FC<Props> = ({ children }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [enableSearch, setEnableSearch] = React.useState(false);
+
   
+  React.useEffect(() => {
+    if (location.pathname === "/github") {
+      setEnableSearch(true);
+    }
+  }, []);
+
   return (
     <div>
       <Box>
         <AppBar position="static">
           <Toolbar className="layout-app-header">
-            <Searcher />
+            { enableSearch ? <Searcher /> : <span></span> }
             <div>
               <Button color="inherit" onClick={()=>navigate(routes.github)}>Github</Button>
               <Button color="inherit" onClick={()=>navigate(routes.rickandmorty)}>Rick and Morty</Button>

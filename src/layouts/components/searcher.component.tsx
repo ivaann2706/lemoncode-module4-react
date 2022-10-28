@@ -1,6 +1,5 @@
 import React from "react";
 
-import { useLocation } from "react-router-dom";
 import { useDebounce } from "use-debounce";
 import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
@@ -52,15 +51,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export const Searcher = () => {
   const { filter, setFilter } = React.useContext(MyContext);
   const [textFilter, setTextFilter] = React.useState(filter);
-  const location = useLocation();
-  const [disableSearch, setDisableSearch] = React.useState(false);
   const [debouncedFilter] = useDebounce(textFilter, 1000);
-
-  React.useEffect(() => {
-    if (location.pathname !== "/github") {
-      setDisableSearch(true);
-    }
-  }, []);
 
   const handleChange = (e) => {
     setTextFilter(e.target.value);
@@ -81,7 +72,6 @@ export const Searcher = () => {
           value={textFilter}
           onChange={handleChange}
           inputProps={{ "aria-label": "search" }}
-          disabled={disableSearch}
         />
       </Search>
     </>
