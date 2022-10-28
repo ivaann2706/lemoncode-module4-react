@@ -1,4 +1,4 @@
-import { MemberEntity } from "./list.api.model";
+import { MemberEntity } from "./github.api.model";
 
 export const getMemberCollection = (
   company: string

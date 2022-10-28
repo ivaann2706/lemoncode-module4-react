@@ -1,11 +1,11 @@
 import React from "react";
 
-import { getMemberVMCollection } from "./list.repository";
-import { List } from "./list.component";
-import { MemberEntity } from "./list.vm";
+import { getMemberVMCollection } from "./github.repository";
+import { GithubList } from "./github-list.component";
+import { MemberEntity } from "./github.vm";
 import { MyContext } from "@/app";
 
-export const ListContainer = () => {
+export const GithubListContainer = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
   const { filter } = React.useContext(MyContext);
 
@@ -13,5 +13,5 @@ export const ListContainer = () => {
     getMemberVMCollection(filter).then(setMembers);
   }, [filter]);
 
-  return <List members={members} />;
+  return <GithubList members={members} />;
 };

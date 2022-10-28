@@ -1,6 +1,6 @@
-import { MemberEntity } from "./list.vm";
-import { getMemberCollection } from "./api/list.api";
-import { mapMemberEntityListToVM } from "./list.mappers";
+import { MemberEntity } from "./github.vm";
+import { getMemberCollection } from "./api/github.api";
+import { mapMemberEntityListToVM } from "./github.mappers";
 
 export const getMemberVMCollection = (
   company: string

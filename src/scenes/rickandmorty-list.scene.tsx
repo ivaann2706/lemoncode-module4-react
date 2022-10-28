@@ -1,12 +1,11 @@
 import React from "react";
 
 import { AppLayout } from "@/layouts/app.layout";
-import { ListContainer } from "@/pods/list";
 
-export const ListScene = () => {
+export const RickAndMortyListScene = () => {
   return (
     <AppLayout>
-      <ListContainer />
+      Hello Rick and Morty!
     </AppLayout>
   );
 };

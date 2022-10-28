@@ -1,11 +1,12 @@
 import React from "react";
 
 import { AppLayout } from "@/layouts/app.layout";
+import { GithubListContainer } from "@/pods/github";
 
-export const RickAndMortyScene = () => {
+export const GithubListScene = () => {
   return (
     <AppLayout>
-      Hello Rick and Morty!
+      <GithubListContainer />
     </AppLayout>
   );
 };

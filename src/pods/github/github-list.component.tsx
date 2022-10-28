@@ -9,13 +9,13 @@ import TableRow from "@mui/material/TableRow";
 import TablePagination from "@mui/material/TablePagination";
 
 import { routes } from "@/core/router/routes";
-import { MemberEntity } from "./list.vm";
+import { MemberEntity } from "./github.vm";
 
 interface Props {
   members: MemberEntity[];
 }
 
-export const List = (props: Props) => {
+export const GithubList = (props: Props) => {
   const { members } = props;
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);

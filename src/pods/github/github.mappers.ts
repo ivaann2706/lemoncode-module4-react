@@ -1,5 +1,5 @@
-import * as am from "./api/list.api.model";
-import * as vm from "./list.vm";
+import * as am from "./api/github.api.model";
+import * as vm from "./github.vm";
 
 export const mapMemberEntityListToVM = (
   data: am.MemberEntity[]
