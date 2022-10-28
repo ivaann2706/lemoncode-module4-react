@@ -2,21 +2,28 @@ import { generatePath } from "react-router-dom";
 
 interface SwitchRoutes {
   root: string;
-  list: string;
-  detail: string;
+  github: string;
+  githubDetail: string;
+  rickandmorty: string
+  rickandmortyDetail: string
 }
 
 export const switchRoutes: SwitchRoutes = {
   root: "/",
-  list: "/list",
-  detail: "/detail/:login",
+  github: "/github",
+  githubDetail: "/github/:login",
+  rickandmorty: "/rickandmorty",
+  rickandmortyDetail: "/rickandmorty/:id",
 };
 
-interface Routes extends Omit<SwitchRoutes, "detail"> {
-  detail: (login: string) => string;
+interface Routes extends Omit<SwitchRoutes, "githubDetail" | "rickandmortyDetail"> {
+  githubDetail: (login: string) => string;
+  rickandmortyDetail: (id: string) => string;
 }
 export const routes: Routes = {
   root: "/",
-  list: "/list",
-  detail: (login: string) => generatePath(switchRoutes.detail, { login }),
+  github: "/github",
+  githubDetail: (login: string) => generatePath(switchRoutes.githubDetail, { login }),
+  rickandmorty: "/rickandmorty",
+  rickandmortyDetail: (id: string) => generatePath(switchRoutes.rickandmortyDetail, { id }),
 };

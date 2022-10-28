@@ -51,7 +51,7 @@ export const List = (props: Props) => {
                 </TableCell>
                 <TableCell align="center">{member.id}</TableCell>
                 <TableCell align="center">
-                  <Link to={routes.detail(member.login)}>{member.login}</Link>
+                  <Link to={routes.githubDetail(member.login)}>{member.login}</Link>
                 </TableCell>
               </TableRow>
             ))}

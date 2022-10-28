@@ -57,7 +57,7 @@ export const Searcher = () => {
   const [debouncedFilter] = useDebounce(textFilter, 1000);
 
   React.useEffect(() => {
-    if (location.pathname !== "/list") {
+    if (location.pathname !== "/github") {
       setDisableSearch(true);
     }
   }, []);

@@ -33,7 +33,7 @@ export const DetailScene = () => {
       <p>login: {member.login}</p>
       <p>company: {member.company}</p>
       <p>bio: {member.bio}</p>
-      <Link to="/list">Go to List</Link>
+      <Link to="/github">Go to List</Link>
     </AppLayout>
   ) : (
     <h3>Loading...</h3>

@@ -13,7 +13,7 @@ export const LoginContainer = () => {
       infoLogin.user === "admin@admin.com" &&
       infoLogin.password === "123456"
     ) {
-      navigate(routes.list);
+      navigate(routes.github);
     } else {
       alert("Invalid user or password");
     }
