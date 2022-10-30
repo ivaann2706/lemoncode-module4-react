@@ -1,1 +1,1 @@
-export * from "./github-list.container";
+export * from './github-list.container';

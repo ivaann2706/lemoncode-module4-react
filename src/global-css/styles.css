@@ -1,26 +1,26 @@
 .my-text {
-  color: blue;
+    color: blue;
 }
 
 .avatar {
-  width: 80px;
+    width: 80px;
 }
 
 .layout-center {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  justify-items: center;
-  margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    margin-top: 2rem;
 }
 
 .layout-app-header {
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .layout-app-header span {
-  margin-left: 2rem;
+    margin-left: 2rem;
 }

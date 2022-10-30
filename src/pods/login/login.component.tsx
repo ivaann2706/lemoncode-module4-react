@@ -25,8 +25,8 @@ export const Login = (props: Props) => {
           <Formik
             onSubmit={onLogin}
             initialValues={{
-              user: "",
-              password: "",
+              user: "admin@admin.com",
+              password: "123456",
             }}
             validate={formValidation.validateForm}
           >

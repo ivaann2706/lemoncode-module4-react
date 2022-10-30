@@ -1,4 +1,4 @@
 export interface InfoLogin {
-  user: string;
-  password: string;
+    user: string;
+    password: string;
 }

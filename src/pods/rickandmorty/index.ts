@@ -1,1 +1,1 @@
-export * from "./rickandmorty-list.container";
+export * from './rickandmorty-list.container';
