@@ -1,6 +1,8 @@
-import { AppLayout } from '@/layouts/app.layout';
 import React from 'react';
+
 import { Link, useParams } from 'react-router-dom';
+
+import { AppLayout } from '@/layouts/app.layout';
 
 interface CharacterDetailEntity {
     id: number;
@@ -32,13 +34,20 @@ export const RickAndMortyDetailScene = () => {
     }, [id]);
     return character ? (
         <AppLayout>
-            <h3>{character.name}</h3>
-            <p>id: {character.id}</p>
-            <p>status: {character.status}</p>
-            <p>species: {character.species}</p>
-            <p>type: {character.type}</p>
-            <p>gender: {character.gender}</p>
-            <Link to="/rickandmorty">Go to List</Link>
+            <div className="detail">
+                <div>
+                    <h3>{character.name}</h3>
+                    <p>id: {character.id}</p>
+                    <p>status: {character.status}</p>
+                    <p>species: {character.species}</p>
+                    <p>type: {character.type}</p>
+                    <p>gender: {character.gender}</p>
+                    <Link to="/rickandmorty">Go to List</Link>
+                </div>
+                <div>
+                    <img src={character.image} />
+                </div>
+            </div>
         </AppLayout>
     ) : (
         <h3>Loading...</h3>

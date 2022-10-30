@@ -24,3 +24,14 @@
 .layout-app-header span {
     margin-left: 2rem;
 }
+
+.detail {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.detail img {
+    width: 400px;
+}
