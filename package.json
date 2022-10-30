@@ -8,7 +8,8 @@
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "start:dev": "webpack-dev-server --mode development --open",
-    "build": "rimraf dist && webpack --mode development"
+    "build": "rimraf dist && webpack --mode development",
+    "format": "prettier --write \"src/**/*.{ts,scss,html,json}\""
   },
   "author": "",
   "license": "ISC",
