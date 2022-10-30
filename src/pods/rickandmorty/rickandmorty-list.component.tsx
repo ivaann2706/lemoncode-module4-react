@@ -5,18 +5,26 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import Pagination from "@mui/material/Pagination";
 
 import { CharacterEntity } from "./rickandmorty.vm";
 
 interface Props {
   characters: CharacterEntity[];
+  page: number;
+  setPage: (value: number) => void;
 }
 
 export const RickAndMortyList = (props: Props) => {
-  const { characters } = props;
+  const { characters, page, setPage } = props;
+
+  const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value);
+  };
 
   return (
     <>
+      <Pagination count={42} page={page} onChange={handleChange} />
       <Table>
         <TableHead>
           <TableRow>
@@ -37,6 +45,7 @@ export const RickAndMortyList = (props: Props) => {
           ))}
         </TableBody>
       </Table>
+      <Pagination count={42} page={page} onChange={handleChange} />
     </>
   );
 };
