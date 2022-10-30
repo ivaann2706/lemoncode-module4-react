@@ -10,7 +10,7 @@ interface MemberDetailEntity {
   bio: string;
 }
 
-export const DetailScene = () => {
+export const GithubDetailScene = () => {
   const [member, setMember] = React.useState<MemberDetailEntity>({
     id: "",
     login: "",
